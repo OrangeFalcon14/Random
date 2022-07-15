@@ -1,4 +1,4 @@
-import datetime
+# import datetime
 import os
 import platform
 
@@ -23,5 +23,7 @@ while True:
         dir = cmd.strip()[3:]
         os.chdir(dir)
         continue
-    output = os.popen(cmd).read()
-    print(output, end="")
+    if cmd.strip() != "":
+        output = os.popen(cmd).read()
+        print(output, end="")
+
